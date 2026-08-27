@@ -11,3 +11,63 @@
  * 
  * display the registration data using console.log.
  */
+
+type Registration = {
+    studentID: string;
+    fullName: string;
+    gradeLevel: number;
+
+    courseID: string;
+    courseTitle: string;
+    instructorName: string;
+    totalLearningHours: number;
+
+    registrationDate: string;
+    paymentComplete: boolean;
+}
+
+const registration1: Registration = {
+    studentID: "ST001",
+    fullName: "Alice Gracia",
+    gradeLevel: 11,
+
+    courseID: "CS100",
+    courseTitle: "Basic Typescript",
+    instructorName: "Mr. David",
+    totalLearningHours: 45,
+
+    registrationDate: "8-5-2026",
+    paymentComplete: true,
+};
+
+const registration2: Registration = {
+    studentID: "ST002",
+    fullName: "Olivia Richardo",
+    gradeLevel: 12,
+
+    courseID: "CS101",
+    courseTitle: "Math for Beginner",
+    instructorName: "Mr. Leo",
+    totalLearningHours: 40,
+
+    registrationDate: "8-5-2026",
+    paymentComplete: false,
+};
+
+const registration3: Registration = {
+    studentID: "ST003",
+    fullName: "Joe Leo",
+    gradeLevel: 10,
+
+    courseID: "CS102",
+    courseTitle: "Python Progamming",
+    instructorName: "Mrs. Pasha",
+    totalLearningHours: 40,
+
+    registrationDate: "8-5-2026",
+    paymentComplete: true,
+};
+
+console.log("Registration 1: ", registration1);
+console.log("Registration 2: ", registration2);
+console.log("Registration 3: ", registration3);
