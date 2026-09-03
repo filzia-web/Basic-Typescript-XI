@@ -1,3 +1,5 @@
+import { read } from "node:fs";
+
 /**
  * The warehouse checks customer orders before shipping based on array below.
  * 
@@ -24,7 +26,28 @@ const orders = [
 
 let ordersReady = 0;
 let unpaidOrders = 0;
-let ordersWaiting = 0; 
+let ordersWaiting = 0;
+const readyOrderIds: string[] = [];
+
+for (const order of orders) {
+  if (order.paid && order.stockAvailable) {
+    ordersReady++;
+    readyOrderIds.push(order.id);
+  }
+
+  if (!order.paid) {
+    unpaidOrders++;
+  }
+
+  if (!order.stockAvailable) {
+    ordersWaiting++;
+  }
+}
+
+console.log("Orders Ready to Ship: ", ordersReady);
+console.log("Unpaid Orders: ", unpaidOrders);
+console.log("Orders Waiting for Stock: ", ordersWaiting);
+console.log("Ready Order ID: ", readyOrderIds);
 
 
 
